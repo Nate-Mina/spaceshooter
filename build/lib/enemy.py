@@ -1,6 +1,7 @@
 import pygame
 import os
 
+
 class Enemy:
     def __init__(self, x, y):
         self.width = 40

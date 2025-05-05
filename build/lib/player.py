@@ -1,6 +1,7 @@
 import pygame
 import os
 
+
 class Player:
     def __init__(self, screen_width, screen_height):
         self.width = 50
