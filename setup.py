@@ -4,7 +4,7 @@ setup(
     name='space-invaders-pygame',
     version='1.0.0',
     description='A simple Space Invaders-style arcade game built with Pygame.',
-    author='Your Name',
+    author='Nathaniel Mina',
     packages=find_packages(),
     py_modules=['main', 'player', 'enemy', 'bullet'],
     install_requires=[

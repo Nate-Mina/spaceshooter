@@ -2,7 +2,7 @@ Metadata-Version: 2.4
 Name: space-invaders-pygame
 Version: 1.0.0
 Summary: A simple Space Invaders-style arcade game built with Pygame.
-Author: Your Name
+Author: Nathaniel Mina
 Requires-Python: >=3.7
 Requires-Dist: pygame>=2.0.0
 Dynamic: author

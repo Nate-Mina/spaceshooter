@@ -1,4 +1,5 @@
 import pygame
+import os
 
 class Player:
     def __init__(self, screen_width, screen_height):
@@ -8,6 +9,11 @@ class Player:
         self.y = screen_height - 50
         self.speed = 5
         self.color = (0, 255, 0)
+        self.sprite = None
+        sprite_path = os.path.join('assets', 'player.png')
+        if os.path.exists(sprite_path):
+            self.sprite = pygame.image.load(sprite_path).convert_alpha()
+            self.sprite = pygame.transform.scale(self.sprite, (self.width, self.height))
 
     def move_left(self):
         if self.x > 0:
@@ -26,8 +32,11 @@ class Player:
             self.y += self.speed
 
     def draw(self, screen):
-        # Draw a green triangle for the player spaceship
-        point1 = (self.x + self.width // 2, self.y)
-        point2 = (self.x, self.y + self.height)
-        point3 = (self.x + self.width, self.y + self.height)
-        pygame.draw.polygon(screen, self.color, [point1, point2, point3])
+        if self.sprite:
+            screen.blit(self.sprite, (self.x, self.y))
+        else:
+            # Draw a green triangle for the player spaceship
+            point1 = (self.x + self.width // 2, self.y)
+            point2 = (self.x, self.y + self.height)
+            point3 = (self.x + self.width, self.y + self.height)
+            pygame.draw.polygon(screen, self.color, [point1, point2, point3])
